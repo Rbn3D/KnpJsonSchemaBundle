@@ -47,6 +47,9 @@ class ExtraValidatorConstraintsHandler implements PropertyHandlerInterface
                     $property->setFormat(Property::FORMAT_IPV6);
                 }
             }
+            if ($constraint instanceof \Symfony\Component\Validator\Constraints\NotBlank) {
+                $property->setRequired(true);
+            }
         }
     }
 
